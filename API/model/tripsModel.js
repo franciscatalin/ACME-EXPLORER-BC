@@ -33,7 +33,7 @@ var TripSchema = new Schema({
         required: 'Kindly enter a valid manager of trip'
     },
     published: {
-        type: boolean,
+        type: Boolean,
         default: false
     },
     ticker: {
@@ -49,6 +49,10 @@ var TripSchema = new Schema({
     title: {
         type: String,
         required: 'Kindly enter the title of the Trip'
+    },
+    cancelationMoment: {
+        type: Date,
+        default: null
     },
     description: {
         type: String,
@@ -101,6 +105,7 @@ function dateValidation(value) {
 function validator(v) {
     return /\d{6}-\w{4}/.test(v);
 }
+
 
 module.exports = mongoose.model('Trips', TripSchema);
 module.exports = mongoose.model('Stages', stagechema);

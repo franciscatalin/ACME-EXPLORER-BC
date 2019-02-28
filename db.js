@@ -5,10 +5,17 @@ require('./API/model/actorsModel');
 var mongoose = require('mongoose');
 
 // MongoDB URI building
+var mongoDBUser = process.env.mongoDBUser;// || "explorerADMIN";
+var mongoDBPass = process.env.mongoDBPass;// || "FaJuChFr_1234";
+var mongoDBCredentials =
+    (mongoDBUser && mongoDBPass) ? mongoDBUser + ":" + mongoDBPass + "@" : "";
+
 var mongoDBHostname = process.env.mongoDBHostname || "localhost";
 var mongoDBPort = process.env.mongoDBPort || "27017";
 var mongoDBName = process.env.mongoDBName || "ACME-Explorer";
-var mongoDBURI = "mongodb://" + mongoDBHostname + ":" + mongoDBPort + "/" + mongoDBName;
+
+var mongoDBURI =
+    "mongodb://" + mongoDBCredentials + mongoDBHostname + ":" + mongoDBPort + "/" + mongoDBName;
 
 mongoose.connect(mongoDBURI, {
     useCreateIndex: true,

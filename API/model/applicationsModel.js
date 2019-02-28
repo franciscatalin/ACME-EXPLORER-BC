@@ -20,7 +20,7 @@ var ApplicationSchema = new Schema({
     },
     comment: {
         type: String,
-        maxlength:255
+        maxlength: 255
     },
     reject_reason: {
         type: String
@@ -33,6 +33,10 @@ var ApplicationSchema = new Schema({
         type: Boolean,
         default: false
     },
+    cancelationMoment: {
+        type: Date,
+        default: null
+    },
     created: {
         type: Date,
         default: Date.now
@@ -40,5 +44,7 @@ var ApplicationSchema = new Schema({
 },
     { strict: false }
 );
+
+ApplicationSchema.index({ cancelationMoment: 1 });
 
 module.exports = mongoose.model('Applications', ApplicationSchema);
