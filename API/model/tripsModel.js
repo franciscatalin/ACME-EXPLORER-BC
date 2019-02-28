@@ -27,10 +27,20 @@ var stagechema = new Schema({
 }, { strict: false });
 
 var TripSchema = new Schema({
+    actor: {
+        type: mongoose.ObjectId,
+        ref: 'Actor',
+        required: 'Kindly enter a valid manager of trip'
+    },
+    published: {
+        type: boolean,
+        default: false
+    },
     ticker: {
+    //    This validation does not run after middleware pre-save 
+    //    required: 'Kindly enter the ticker of the Trip',
         type: String,
         unique: true,
-        //This validation does not run after middleware pre-save        required: 'Kindly enter the ticker of the Trip',
         validate: [
             validator,
             'ticker is not valid!, Pattern("\d(6)-\w(4)")'

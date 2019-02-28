@@ -120,7 +120,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "\r\n{\r\n    \"list_requirements\": [\"mayor de edad\"],\r\n    \"date_start\": \"2010-11-11T23:00:00.000Z\",\r\n    \"date_end\": \"2011-12-11T23:00:00.000Z\",\r\n    \"description\": \"Viaje\",\r\n    \"title\": \"Viaje a Alemania\",\r\n    \"ticker\": \"190115-BAAA\",\r\n    \"picture\": [{\r\n              \"Buffer\":\"awedfcrfvaesfvefdvsfdv1aerdfvadf64vAadf8bv4gs6d4bs6gv15fs1v6efef\",\r\n               \"contentType\":\"jpg\"\r\n               }],\r\n    \"stage\": [\r\n    \t{\r\n    \t\t\"title\":\"AlemaniaMunich\",\r\n    \t\t\"descripcion\":\"AlemaniaMunich\",\r\n    \t\t\"price\":0.0\r\n    \t},\r\n    \t{\r\n    \t\t\r\n    \t\t\"title\":\"AlemaniaBerlin\",\r\n    \t\t\"descripcion\":\"AlemaniaBerlin\",\r\n    \t\t\"price\":0.0\r\n    \t}\r\n    \t\r\n    ]\r\n  \r\n}\r\n   "
+							"raw": "\r\n{\r\n    \"list_requirements\": [\"mayor de edad\"],\r\n    \"date_start\": \"2010-11-11T23:00:00.000Z\",\r\n    \"date_end\": \"2011-12-11T23:00:00.000Z\",\r\n    \"description\": \"Viaje\",\r\n    \"title\": \"Viaje a Alemania\",\r\n    \"ticker\": \"190115-BAAA\",\r\n    \"picture\": [{\r\n              \"Buffer\":\"awedfcrfvaesfvefdvsfdv1aerdfvadf64vAadf8bv4gs6d4bs6gv15fs1v6efef\",\r\n               \"contentType\":\"jpg\"\r\n               }],\r\n    \"stage\": [\r\n    \t{\r\n    \t\t\"title\":\"AlemaniaMunich\",\r\n    \t\t\"description\":\"AlemaniaMunich\",\r\n    \t\t\"price\":0.0\r\n    \t},\r\n    \t{\r\n    \t\t\r\n    \t\t\"title\":\"AlemaniaBerlin\",\r\n    \t\t\"description\":\"AlemaniaBerlin\",\r\n    \t\t\"price\":0.0\r\n    \t}\r\n    \t\r\n    ]\r\n  \r\n}\r\n   "
 						},
 						"url": {
 							"raw": "http://localhost:4000/v1/trips",

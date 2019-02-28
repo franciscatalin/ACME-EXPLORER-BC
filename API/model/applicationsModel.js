@@ -3,6 +3,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ApplicationSchema = new Schema({
+    explorer: {
+        type: mongoose.ObjectId,
+        ref: 'Actor',
+        required: 'Kindly enter a valid explorer of application'
+    },
     trip: {
         type: mongoose.ObjectId,
         ref: 'Trip',

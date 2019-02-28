@@ -35,12 +35,12 @@ exports.list_all_trips = function (req, res) {
 
 exports.list_a_trip = function (req, res) {
     //Check if status param exists (status: req.query.status)  
-    Trip.find({ _id: req.params._id }, function (err, trips) {
+    Trip.find({ _id: req.params._id }, function (err, trip) {
         if (err) {
             res.send(err);
         }
         else {
-            res.json(trips);
+            res.json(trip);
         }
     });
 
