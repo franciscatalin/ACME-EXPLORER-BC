@@ -32,7 +32,7 @@ var ActorSchema = new Schema({
     role: [{
         type: String,
         required: 'Kindly enter the user role(s)',
-        enum: ['ADMINISTRATOR', 'MANAGER', 'EXPLORER']
+        enum: ['ADMINISTRATOR', 'MANAGER', 'EXPLORER', 'SPONSOR']
     }],
     created: {
         type: Date,

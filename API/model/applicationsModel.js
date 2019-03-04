@@ -45,6 +45,6 @@ var ApplicationSchema = new Schema({
     { strict: false }
 );
 
-ApplicationSchema.index({ cancelationMoment: 1 });
+ApplicationSchema.index({ status: 1 });
 
 module.exports = mongoose.model('Applications', ApplicationSchema);

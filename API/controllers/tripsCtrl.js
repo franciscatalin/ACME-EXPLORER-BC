@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 exports.create_an_trip = function (req, res) {
     //Check if the user is an explorer and if not: res.status(403); 
     //"an access token is valid, but requires more privileges"
-    console.log((req.body));
+    // console.log((req.body));
     var new_trip = new Trip(req.body);
     new_trip.save(function (err, trip) {
         if (err) {
@@ -49,19 +49,25 @@ exports.list_a_trip = function (req, res) {
 
 
 exports.update_an_trip = function (req, res) {
-    console.log((req.body));
-    Trip.findOneAndUpdate({ ticker: req.params.ticker }, req.body, { new: true }, function (err, trip) {
-        if (err) {
-            res.send(err);
-        }
-        else {
-            res.json(trip);
-        }
-    });
+    // console.log((req.body));
+    Trip.findOneAndUpdate(
+        { ticker: req.params.ticker },
+        req.body,
+        { new: true },
+        function (err, trip) {
+            if (err) {
+                res.send(err);
+            }
+            else {
+                res.json(trip);
+            }
+        });
 };
 
 exports.delete_an_trip = function (req, res) {
-    Trip.deleteOne({ _id: req.params._id }, function (err, trip) {
+    Trip.deleteOne(
+        { _id: req.params._id },
+         function (err, trip) {
         if (err) {
             res.send(err);
         }

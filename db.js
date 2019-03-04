@@ -1,6 +1,8 @@
-require('./API/model/applicationsModel');
-require('./API/model/tripsModel');
-require('./API/model/actorsModel');
+require('./API/model/applicationsModel'),
+require('./API/model/tripsModel'),
+require('./API/model/actorsModel'),
+require('./API/model/bannerModel'),
+require('./API/model/dataWareHouseModel');
 
 var mongoose = require('mongoose');
 
