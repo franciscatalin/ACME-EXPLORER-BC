@@ -48,31 +48,41 @@ exports.list_a_trip = function (req, res) {
 };
 
 
+
+
 exports.update_an_trip = function (req, res) {
     // console.log((req.body));
+    
     Trip.findOneAndUpdate(
         { ticker: req.params.ticker },
         req.body,
         { new: true },
         function (err, trip) {
+            if (trip.status != 'PUBLISHED') {
             if (err) {
                 res.send(err);
             }
             else {
                 res.json(trip);
             }
+        }
+        else {res.status(405).json({ message: 'Update trip with status PUBLISHED is not allowed' });}
         });
 };
 
 exports.delete_an_trip = function (req, res) {
+    
     Trip.deleteOne(
         { _id: req.params._id },
          function (err, trip) {
+        
         if (err) {
             res.send(err);
         }
         else {
             res.json({ message: 'Trip successfully deleted' });
         }
+    
+   
     });
 };

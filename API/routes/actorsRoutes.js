@@ -53,4 +53,5 @@ module.exports = function (app) {
   */
   app.route('/v1/actors/:actorId/validate')
     .put(actors.validate_an_actor)
+
 }
