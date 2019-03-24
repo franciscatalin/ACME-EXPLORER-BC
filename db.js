@@ -1,14 +1,14 @@
 require('./API/model/applicationsModel'),
-require('./API/model/tripsModel'),
-require('./API/model/actorsModel'),
-require('./API/model/bannerModel'),
-require('./API/model/dataWareHouseModel');
+    require('./API/model/tripsModel'),
+    require('./API/model/actorsModel'),
+    require('./API/model/bannerModel'),
+    require('./API/model/dataWareHouseModel');
 
 var mongoose = require('mongoose');
 
 // MongoDB URI building
-var mongoDBUser = process.env.mongoDBUser;// || "explorerADMIN";
-var mongoDBPass = process.env.mongoDBPass;// || "FaJuChFr_1234";
+var mongoDBUser = process.env.mongoDBUser || "myAdmin";
+var mongoDBPass = process.env.mongoDBPass || "myAdminPassword";
 var mongoDBCredentials =
     (mongoDBUser && mongoDBPass) ? mongoDBUser + ":" + mongoDBPass + "@" : "";
 

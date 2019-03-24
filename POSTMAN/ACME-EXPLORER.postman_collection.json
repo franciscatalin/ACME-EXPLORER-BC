@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "878a07f5-1682-4f31-8dd3-ca4faeada561",
+		"name": "ACME-EXPLORER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "actorRequest",
+			"item": [
+				{
+					"name": "Post Actors",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"role\" : [\r\n        \"EXPLORER\"\r\n    ], \r\n    \"name\" : \"Jose Juan\", \r\n    \"surname\" : \"Sanchez\", \r\n    \"email\" : \"jose.sanchez@gmail.com\", \r\n    \"password\" : \"123456\", \r\n    \"phone\" : \"809-565-8899\", \r\n    \"address\" : \"Almirante Ulloa\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   { \"name\":\"yerlli\",\r\n    \"surname\": \"salas\",\r\n    \"email\": \"abcde.example@gmail.com\",\r\n    \"password\": \"abcde\",\r\n    \"phone\": \"809-565-8899\",\r\n    \"address\": \"Almirante Ulloa\" ,\r\n    \"role\": \"EXPLORER\"\r\n   }\r\n   "
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/actors/:5c6853124112510ff0a5dbb4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"actors",
+								":5c6853124112510ff0a5dbb4"
+							],
+							"variable": [
+								{
+									"key": "5c6853124112510ff0a5dbb4",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Testing Insert Many",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/store/insertMany?dbURL=mongodb://localhost:27017/ACME-Explorer&mongooseModel=Actors&sourceFile=c:/temp/TestingInsertMany.json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"store",
+								"insertMany"
+							],
+							"query": [
+								{
+									"key": "dbURL",
+									"value": "mongodb://localhost:27017/ACME-Explorer"
+								},
+								{
+									"key": "mongooseModel",
+									"value": "Actors"
+								},
+								{
+									"key": "sourceFile",
+									"value": "c:/temp/TestingInsertMany.json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Testing Many Actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/store/fs?dbURL=mongodb://localhost:27017/ACME-Explorer&collection=actors&batchSize=100&parseString=*&sourceFile=c:\\temp\\TestingManyActors.json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"store",
+								"fs"
+							],
+							"query": [
+								{
+									"key": "dbURL",
+									"value": "mongodb://localhost:27017/ACME-Explorer"
+								},
+								{
+									"key": "collection",
+									"value": "actors"
+								},
+								{
+									"key": "batchSize",
+									"value": "100"
+								},
+								{
+									"key": "parseString",
+									"value": "*"
+								},
+								{
+									"key": "sourceFile",
+									"value": "c:\\temp\\TestingManyActors.json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post from URL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/store/url?dbURL=mongodb://localhost:27017/ACME-Explorer&collection=actors&batchSize=100&parseString=*&sourceURL=https://drive.google.com/uc?export=download%26id=1wOcO1yIk8u3hlii5i8WIBoI15iuRpujx",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"store",
+								"url"
+							],
+							"query": [
+								{
+									"key": "dbURL",
+									"value": "mongodb://localhost:27017/ACME-Explorer"
+								},
+								{
+									"key": "collection",
+									"value": "actors"
+								},
+								{
+									"key": "batchSize",
+									"value": "100"
+								},
+								{
+									"key": "parseString",
+									"value": "*"
+								},
+								{
+									"key": "sourceURL",
+									"value": "https://drive.google.com/uc?export=download%26id=1wOcO1yIk8u3hlii5i8WIBoI15iuRpujx"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tripRequest",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/trips",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"trips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"list_requirements\": [\"mayor de edad\"],\r\n    \"date_start\": \"2010-11-11T23:00:00.000Z\",\r\n    \"date_end\": \"2011-12-11T23:00:00.000Z\",\r\n    \"description\": \"Viaje\",\r\n    \"title\": \"Viaje a Alemania\",\r\n    \"picture\": [{\r\n              \"Buffer\":\"awedfcrfvaesfvefdvsfdv1aerdfvadf64vAadf8bv4gs6d4bs6gv15fs1v6efef\",\r\n               \"contentType\":\"jpg\"\r\n               }],\r\n    \"stage\": [\r\n    \t{\r\n    \t\t\"title\":\"AlemaniaMunich\",\r\n    \t\t\"description\":\"AlemaniaMunich\",\r\n    \t\t\"price\":0.0\r\n    \t},\r\n    \t{\r\n    \t\t\r\n    \t\t\"title\":\"AlemaniaBerlin\",\r\n    \t\t\"description\":\"AlemaniaBerlin\",\r\n    \t\t\"price\":0.0\r\n    \t}\r\n    \t\r\n    ]\r\n  \r\n}\r\n   "
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/trips",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"trips"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/trips/:ticker",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"trips",
+								":ticker"
+							],
+							"variable": [
+								{
+									"key": "ticker",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list_requirements\": [\n        \"mayor de edad\"\n    ],\n    \n    \"date_start\": \"2010-11-11T23:00:00.000Z\",\n    \"date_end\": \"2011-12-11T23:00:00.000Z\",\n    \"description\": \"Viaje\",\n    \"title\": \"Viaje a Rusia\",\n    \"ticker\": \"190115-BBBB\",\n    \"picture\": [\n        {\n            \"_id\": \"5c687760c42f2d22c08cd850\",\n            \"Buffer\": \"awedfcrfvaesfvefdvsfdv1aerdfvadf64vAadf8bv4gs6d4bs6gv15fs1v6efef\",\n            \"contentType\": \"jpg\"\n        }\n    ],\n    \"stage\": [\n        {\n            \"price\": 0,\n            \"_id\": \"5c687760c42f2d22c08cd852\",\n            \"title\": \"Espana Moscu\",\n            \"description\": \"Espana Moscu\",\n            \"created\": \"2019-02-16T20:49:36.045Z\"\n        }\n        \n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/trips/190115-BBBB",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"trips",
+								"190115-BBBB"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "applicationRequest",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n   { \r\n   \t\"trip\": \"5c68768dc42f2d22c08cd84b\",\r\n   \t\"comment\":\"Quiero participar en el viaje\"\r\n   \r\n   \r\n   \t\r\n   }\r\n    "
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"status\": \"PENDING\",\r\n    \"if_paid\": false,\r\n    \"validated\": false,\r\n    \"trip\": \"5c68768dc42f2d22c08cd84b\",\r\n    \"comment\": \" NO Quiero participar en el viaje\"\r\n   \r\n}\r\n   \r\n    "
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/applications/5c687d6eab350321f0c27ca8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"applications",
+								"5c687d6eab350321f0c27ca8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7f8fc347-891b-4ef1-98e3-2aed26db2332",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f636da2d-4f6e-4b7e-a7b1-3505d186baee",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

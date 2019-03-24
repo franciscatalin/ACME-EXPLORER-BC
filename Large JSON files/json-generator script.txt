@@ -1,0 +1,21 @@
+//Click in "try it now" to update the latest version of JSON generator
+ 
+[
+  {
+   'repeat(90, 100)': { 
+    id:'{{objectId()}}',
+    name:'{{firstName()}}',
+    surname:'{{surname()}}',
+    phone:'{{phone()}}',
+    address:'{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    role:['{{random("ADMINISTRATOR", "MANAGER", "EXPLORER" ,"SPONSOR")}}'],
+    preferredLanguage:'{{random("en", "es")}}',
+       email(tags) {
+        return `${this.name}.${this.surname}@${company()}${tags.domainZone()}`.toLowerCase();
+      },
+    validated:'{{bool()}}',
+    password :'{{guid()}}',
+    __v:0
+	}
+  }
+]

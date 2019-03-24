@@ -39,6 +39,10 @@ var ActorSchema = new Schema({
     customToken: {
         type: String
     },
+    preferredLanguage: {
+        type: String,
+        default: 'es'
+    },
     created: {
         type: Date,
         default: Date.now

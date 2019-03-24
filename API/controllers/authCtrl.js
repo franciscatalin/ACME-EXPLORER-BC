@@ -63,10 +63,7 @@ exports.verifyUser = function (requiredRoles) {
           for (var i = 0; i < requiredRoles.length; i++) {
             for (var j = 0; j < actor.role.length; j++) {
               if (requiredRoles[i] == actor.role[j]) {
-                if (requiredRoles[i] == "MANAGER") {
-                  if (actor.validated == true) isAuth = true;
-                }
-                else isAuth = true;
+               isAuth = true;
               }
             }
           }
@@ -80,8 +77,8 @@ exports.verifyUser = function (requiredRoles) {
     }).catch(function (err) {
       // Handle error
       console.log("Error en autenticación: " + err);
-      res.status(403); //an access token is valid, but requires more privileges
-      res.json({ message: 'The actor has not the required roles', error: err });
+      res.status(403); //an access token is invalid, and can not access to the app
+      res.json({ message: 'The actor has not the required credentials', error: err });
     });
   }
 }
